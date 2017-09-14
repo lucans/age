@@ -155,12 +155,291 @@ app.controller("ageCtrl", ['$scope', '$http', '$rootScope','$location', function
                       "bonus_5": "Town Centers have +5 line of sight, +2 attack (removed in Forgotten)",                                          
                   },               
                   "bonus_team" : "Units resist conversion (Resistance to the conversion is similar to Faith)",
-                  "unidade_unica" : "Teutonic Knight (slow but very strong infantry. Excellent for hand-to-hand combat.)",
+                  "unidade_unica" : "Teutonic Knight (slow but very strong infantry. Excellent for hand-to-hand combat)",
                   "tecnologia_unica" : "Crenellations (Increased range for Castles; garrisoned infantry fire arrows), Ironclad (Siege weapons get +4 melee armor)",
                 },
 
+            "turks": 
+                {
+                  "nome" : "turks",
+                  "bonus" : {
+                      "bonus_1": "Gunpowder Units have +25% HP", 
+                      "bonus_2": "Gunpowder technologies are 50% cheaper",                                          
+                      "bonus_3": "Chemistry technology free",                                          
+                      "bonus_4": "Gold miners work 15% faster",                                          
+                      "bonus_5": "Light Cavalry and Hussar upgrade free",                                          
+                  },               
+                  "bonus_team" : "Gunpowder units created 20% faster",
+                  "unidade_unica" : "Janissary (more powerful hand cannoneer with increased range)",
+                  "tecnologia_unica" : "Artillery (increased range for Bombard Towers, Bombard Cannons and Cannon Galleons), Sipahi (Cavalry Archers +20 HP)",
+                },            
 
+            "vikings": 
+                {
+                  "nome" : "vikings",
+                  "bonus" : {
+                      "bonus_1": "Warships are 20% cheaper", 
+                      "bonus_2": "Infantry have +10% HP in Feudal Age, 15% Castle Age, 20% Imperial Age (not cumulative)",                                          
+                      "bonus_3": "Wheelbarrow and Hand Cart technologies are free",                                                                                                      
+                  },               
+                  "bonus_team" : "Docks are 25% cheaper",
+                  "unidade_unica" : "Berserk (health regenerating infantry), Longboat (warship that fires multiple arrows)",
+                  "tecnologia_unica" : "Berserkergang (Berserks have increased health regenation rate), Chieftains (infantry get +5 attack bonus vs. cavalry)",
+                },
 
+            "aztecs": 
+                {
+                  "nome" : "aztecs",
+                  "bonus" : {
+                      "bonus_1": "Villagers carry +5 extra resources", 
+                      "bonus_2": "All military units created 15% faster",                                          
+                      "bonus_3": "Monks gain 5 HP for each researched Monastery technology",                                                                                                      
+                      "bonus_4": "Loom free (removed in Forgotten)",                                                                                                      
+                  },               
+                  "bonus_team" : "Relics generate 33% more gold",
+                  "unidade_unica" : "Jaguar Warrior (Anti-infantry infantry)",
+                  "tecnologia_unica" : "Garland Wars (Increased attack for infantry), Atlatl (Skirmishers have +1 attack, +1 range)",
+                },
+
+            "huns": 
+                {
+                  "nome" : "huns",
+                  "bonus" : {
+                      "bonus_1": "Houses not required, but start game with -100 wood", 
+                      "bonus_2": "Cavalry Archers cost -25% in Castle, -30% in Imperial (changed in African Kingdoms)",                                          
+                      "bonus_3": "Trebuchets are 35% more accurate",
+                  },               
+                  "bonus_team" : "Stables work 20% faster",
+                  "unidade_unica" : "Tarkan (anti-building cavalry)",
+                  "tecnologia_unica" : "Atheism (+100 years for Relic/Wonder victories and Spies/Treason cost -50% less), Marauders (Create Tarkans at Stables)",
+                },
+
+            "koreans": 
+                {
+                  "nome" : "koreans",
+                  "bonus" : {
+                      "bonus_1": "Villagers have +3 line of sight", 
+                      "bonus_2": "Stone miners work 20% faster",                                          
+                      "bonus_3": "Tower upgrades are free (Chemistry still required for Bombard Tower)",
+                      "bonus_4": "Towers (except Bombard Towers) have +1 range in Castle Age, +1 in Imperial Age (for +2 total)",
+                  },               
+                  "bonus_team" : "Mangonels, Onagers have +1 range",
+                  "unidade_unica" : "War Wagon (heavily armored cavalry archer), Turtle Ship (heavily armored warship)",
+                  "tecnologia_unica" : "Shinkichon (increased range for Mangonels, Onagers), Panokseon (Turtle Ships move 15% faster)",
+                },
+
+            "mayans": 
+                {
+                  "nome" : "mayans",
+                  "bonus" : {
+                      "bonus_1": "Start with +1 Villager, but with -50 Food", 
+                      "bonus_2": "Resources last 20% longer",                                          
+                      "bonus_3": "Foot archers are 10% cheaper in Feudal Age, 20% in Castle Age, 30% in Imperial Age",                      
+                  },               
+                  "bonus_team" : "Walls are 50% cheaper (Stone Walls costs 40% less due to rounding.)",
+                  "unidade_unica" : "Plumed Archer (fast foot archer with decent pierce armor)",
+                  "tecnologia_unica" : "El Dorado (increased HP for Eagle Warriors), Obsidian Arrows (Archer-line has +6 attack vs. buildings)",
+                },            
+
+            "spanish": 
+                {
+                  "nome" : "spanish",
+                  "bonus" : {
+                      "bonus_1": "Builders work 30% faster", 
+                      "bonus_2": "Blacksmith upgrades don't cost gold",                                          
+                      "bonus_3": "Cannon Galleons have Ballistics and faster missiles",                      
+                      "bonus_4": "Hand Cannoneers and Bombard Cannons fire 15% faster",                      
+                  },               
+                  "bonus_team" : "Trade Carts, Trade Cogs return 25% more gold",
+                  "unidade_unica" : "Conquistador (mounted hand cannoneer), Missionary (mounted monk)",
+                  "tecnologia_unica" : "Supremacy (increased attack, armor and HP for Villagers), Inquisition (Monks conversion rate improved)",
+                },            
+
+            "incas": 
+                {
+                  "nome" : "incas",
+                  "bonus" : {
+                      "bonus_1": "Start with a free llama", 
+                      "bonus_2": "Villagers benefit from Blacksmith upgrades",                                          
+                      "bonus_3": "Houses support 10 population",                      
+                      "bonus_4": "Buildings cost -15% stone",                      
+                  },               
+                  "bonus_team" : "Farms are built 50% faster",
+                  "unidade_unica" : "Kamayuk (anti-cavalry infantry), Slinger (anti-infantry archer)",
+                  "tecnologia_unica" : "Andean Sling (Slingers and Skirmishers with no minimum range), Couriers (Kamayuks, Slingers and Eagles +1 melee armor/+2 pierce armor)",
+                },            
+
+            "incas": 
+                {
+                  "nome" : "incas",
+                  "bonus" : {
+                      "bonus_1": "Start with a free llama", 
+                      "bonus_2": "Villagers benefit from Blacksmith upgrades",                                          
+                      "bonus_3": "Houses support 10 population",                      
+                      "bonus_4": "Buildings cost -15% stone",                      
+                  },               
+                  "bonus_team" : "Farms are built 50% faster",
+                  "unidade_unica" : "Kamayuk (anti-cavalry infantry), Slinger (anti-infantry archer)",
+                  "tecnologia_unica" : "Andean Sling (Slingers and Skirmishers with no minimum range), Couriers (Kamayuks, Slingers and Eagles +1 melee armor/+2 pierce armor)",
+                },            
+
+          "indians": 
+                {
+                  "nome" : "indians",
+                  "bonus" : {
+                      "bonus_1": "Fishermen work 15% faster and carry +15 food", 
+                      "bonus_2": "Villagers cost -5% Dark Age, -10% Feudal Age, -15% Castle Age, -20% Imperial Age",                                          
+                      "bonus_3": "Camels +1 melee armor/+1 pierce armor",                                                                
+                  },               
+                  "bonus_team" : "Camels +6 attack vs. buildings.",
+                  "unidade_unica" : "Elephant Archer (Heavy mounted archer riding an elephant, good HP and pierce armour), Imperial Camel (Anti-Cavalry Camel upgrade)",
+                  "tecnologia_unica" : "Sultans (All gold production +10% faster), Shatagni (Hand Cannoneers get +1 range)",
+                },          
+
+          "italians": 
+                {
+                  "nome" : "italians",
+                  "bonus" : {
+                      "bonus_1": "All dock technologies cost -50%", 
+                      "bonus_2": "Fishing ship cost -25 wood",                                          
+                      "bonus_3": "Gunpowder units cost -20% (technology tree states -25% but it's 20)",                                                                
+                      "bonus_4": "Advancing to the next age 15% cheaper",                                                                
+                  },               
+                  "bonus_team" : "Condottiero also available in allies' barracks in the Imperial Age",
+                  "unidade_unica" : "Genoese Crossbowman (Archer with bonus against cavalry), Condottiero (Infantry with bonus against gunpowder units)",
+                  "tecnologia_unica" : "Pavise (Foot archers +1 melee armor/+1 pierce armor), Silk Road (Trade units 50% cheaper)",
+                },          
+
+          "magyars": 
+                {
+                  "nome" : "magyars",
+                  "bonus" : {
+                      "bonus_1": "Forging, Iron Casting, Blast Furnace free (requires Blacksmith)", 
+                      "bonus_2": "Scout Cavalry, Light Cavalry, Hussar cost -10%",                                          
+                      "bonus_3": "Villagers kill wild animals in one strike",
+                  },               
+                  "bonus_team" : "Foot archers +2 line of sight",
+                  "unidade_unica" : "Magyar Huszar (Cheap cavalry unit w/ attack bonus against siege weapons)",
+                  "tecnologia_unica" : "Recurve Bow (Cavalry archers + 1 range), Mercenaries (Magyar Huszars cost no gold)",
+                },          
+
+            "slavs": 
+                {
+                  "nome" : "slavs",
+                  "bonus" : {
+                      "bonus_1": "Farmers work 15% faster", 
+                      "bonus_2": "Tracking free",                                          
+                      "bonus_3": "Siege units 15% cheaper",
+                  },               
+                  "bonus_team" : "Military buildings provide +5 population",
+                  "unidade_unica" : "Boyar (heavily armored cavalry)",
+                  "tecnologia_unica" : "Orthodoxy (Monks extra armor), Druzhina (Infantry damage adjacent units)",
+                },            
+
+            "berbers": 
+                {
+                  "nome" : "berbers",
+                  "bonus" : {
+                      "bonus_1": "Villagers move +10% faster", 
+                      "bonus_2": "Stable units cost -15%/-20% in Castle/Imperial Age",                                          
+                      "bonus_3": "Ships move +10% faster",
+                  },               
+                  "bonus_team" : "Genitour (mounted skirmisher) available at the Archery Range",
+                  "unidade_unica" : "Camel Archer (“anti-Cavalry Archer” Cavalry Archer), Genitour (Mounted Skirmisher)",
+                  "tecnologia_unica" : "Kasbah (Team Castles work +25% faster), Maghrabi Camels (Camel troops regenerate)",
+                },            
+
+            "ethiopians": 
+                {
+                  "nome" : "ethiopians",
+                  "bonus" : {
+                      "bonus_1": "Archers fire +15% faster", 
+                      "bonus_2": "Receive +100 gold, +100 food when advancing to the next Age",                                          
+                      "bonus_3": "Pikeman and Halberdier upgrades free",
+                  },               
+                  "bonus_team" : "Towers and Outposts +3 line of sight",
+                  "unidade_unica" : "Shotel Warrior (infantry)",
+                  "tecnologia_unica" : "Royal Heirs (Shotel Warriors are created nearly instantly), Torsion Engines (Siege Workshop units blast radius increased)",
+                },            
+
+            "malians": 
+                {
+                  "nome" : "malians",
+                  "bonus" : {
+                      "bonus_1": "Buildings cost -15% wood (except Farms)", 
+                      "bonus_2": "Barracks units +1 pierce armor per Age (starting from Feudal Age)",                                          
+                      "bonus_3": "Gold Mining and  Gold Shaft Mining, free",
+                  },               
+                  "bonus_team" : "University researches +80% faster",
+                  "unidade_unica" : "Gbeto (ranged infantry)",
+                  "tecnologia_unica" : "Tigui (ungarrisoned Town Centers fire arrows), Farimba (Stable units +5 attack)",
+                },
+
+            "portuguese": 
+                {
+                  "nome" : "portuguese",
+                  "bonus" : {
+                      "bonus_1": "All units cost -15% gold", 
+                      "bonus_2": "Ships +10% HP",                                          
+                      "bonus_3": "Can build Feitoria in Imperial Age",
+                  },               
+                  "bonus_team" : "Free Cartography from the Dark Age",
+                  "unidade_unica" : "Organ Gun (Siege unit), Caravel (Warship)",
+                  "tecnologia_unica" : "Carrack (Ships +1/+1 armor), Arquebus (Gunpowder units affected by Ballistics)",
+                },
+
+          "burmese": 
+                {
+                  "nome" : "burmese",
+                  "bonus" : {
+                      "bonus_1": "Free Lumber Camp upgrades", 
+                      "bonus_2": "Infantry +1 attack per Age",                                          
+                      "bonus_3": "Monastery techs 50% cheaper",
+                  },               
+                  "bonus_team" : "Relics visible on map",
+                  "unidade_unica" : "Arambai (cavalry with powerful ranged attack)",
+                  "tecnologia_unica" : "Howdah (Battle Elephants +1/+2 armor), Manipur Cavalry (Cavalry and Arambai +6 attack vs buildings)",
+                },          
+
+          "khmer": 
+                {
+                  "nome" : "khmer",
+                  "bonus" : {
+                      "bonus_1": "No buildings required to advance to the next Age or to unlock other buildings", 
+                      "bonus_2": "Battle Elephants +15% faster",                                          
+                      "bonus_3": "Villagers can garrison in Houses",
+                  },               
+                  "bonus_team" : "Scorpions +1 range",
+                  "unidade_unica" : "Ballista Elephant (siege cavalry)",
+                  "tecnologia_unica" : "Tusk Swords (Battle Elephants +3 attack), Double Crossbow (Ballista Elephants and Scorpions shoot two projectiles)",
+                },          
+
+            "malay": 
+                {
+                  "nome" : "malay",
+                  "bonus" : {
+                      "bonus_1": "Advancing to Ages takes only 60% of the usual time", 
+                      "bonus_2": "Fish Traps cost -33%",                                          
+                      "bonus_3": "Fish Traps provide unlimited food",
+                      "bonus_4": "Battle Elephants 25% cheaper",
+                  },               
+                  "bonus_team" : "Docks +100% line of sight",
+                  "unidade_unica" : "Karambit Warrior (infantry with very cheap production cost)",
+                  "tecnologia_unica" : "Thalassocracy (upgrade Docks to Harbors, which shoot arrows), Forced Levy (Militia-line costs no gold)",
+                },            
+
+            "vietnamese": 
+                {
+                  "nome" : "vietnamese",
+                  "bonus" : {
+                      "bonus_1": "Reveal enemy positions at game start", 
+                      "bonus_2": "Archery Range units +10% HP Feudal, +15% Castle, +20% Imperial Age",                                          
+                      "bonus_3": "Free Conscription",                      
+                  },               
+                  "bonus_team" : "Have access to the Imperial Skirmisher upgrade",
+                  "unidade_unica" : "Rattan Archer (heavily armored archer)",
+                  "tecnologia_unica" : "Chatras (Battle Elephants +30 HP), Paper Money (Tributes 500 gold to each Ally)",
+                },
       }    
 
 
