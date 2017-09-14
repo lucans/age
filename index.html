@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age Simulator</title>
+
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/popper.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+
+
+	<script src="resources/js/angular.min.js"></script>
+	<script src="resources/js/angular-ui-router.min.js"></script>
+	<script src="resources/js/angular-animate.min.js"></script>
+	<script src="resources/js/app.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/custom.css">
+
+
+</head>
+
+<body ng-app="army">
+	<div class="container-fluid" ng-controller="ageCtrl">
+  		<div class="row">
+
+		<div class="col bg-primary full-h text-white">
+			<!-- 	
+				<div class="form-group mt-3">    
+				    <input type="text" class="form-control" ng-model="pesquisa" placeholder="Search here">
+				</div> -->
+
+				<div class="mb-2 mt-3" ng-repeat="civilizacao in civilizacoes">
+											
+					<a class="btn col-md-12 ml-auto bg-light text-dark capitalize" data-toggle="collapse" href="#{{civilizacao.nome}}" aria-expanded="false" aria-controls="{{civilizacao.nome}}">
+						<b>{{civilizacao.nome}}</b>
+					</a>						 			
+
+					<div class="mt-2 collapse" id="{{civilizacao.nome}}">					  
+						<div class="card card-body text-dark">					   
+							<h5>Bonus</h5>
+							<div class="alert alert-success p-1" ng-repeat="bonus in civilizacao.bonus" role="alert"><i class="fa fa-plus-square"></i> {{bonus}}</div>
+							<div class="alert alert-warning p-2" role="alert"><i class="fa fa-globe"></i> Team: <b>{{civilizacao.bonus_team}}</b></div>
+							
+							<h5>Uniques</h5>
+							<div class="alert alert-dark p-2" role="alert"><i class="fa fa-home"></i> Unity: <b>{{civilizacao.unidade_unica}}</b></div>
+							<div class="alert alert-dark p-2" role="alert"><i class="fa fa-cog"></i> Technologies: {{civilizacao.tecnologia_unica}}</div>
+
+							<button type="button" class="btn btn-outline-primary col-md-3 ml-md-auto" ng-click="addCivilizacao(civilizacao)"><i class="fa fa-user-plus"></i> Add</button>
+						</div>
+					</div>
+
+				</div>	
+
+		</div>
+
+		<div class="col bg-dark full-h text-dark">					
+			<div class="card mb-2 mt-3" ng-repeat="civilizacao in team">
+			  <div class="card-header p-2 capitalize"><b>{{civilizacao.nome}}</b>
+			  	<button class="btn btn-outline-primary btn-sm float-xl-right" ng-click="removeCivilizacao(civilizacao)">Remove</button></div>
+			  <div class="card-body p-2">
+			    <!-- <h4 class="card-title">{{civilizacao.bonus_team}}</h4> -->
+			    <div class="alert alert-success p-1" ng-repeat="bonus in civilizacao.bonus" role="alert"><i class="fa fa-plus-square"></i> {{bonus}}</div>
+			  </div>
+			</div>
+
+			<hr>
+		<h4 class="text-light" ng-show="team.length > 0"><i class="fa fa-users"></i> Bonus team</h4>
+		<div class="alert alert-warning p-2"  ng-repeat="civilizacao in team" role="alert"><big><span class="badge badge-primary capitalize">{{civilizacao.nome}}</span> {{civilizacao.bonus_team}}</big></div>
+
+		</div>
+
+
+
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+body{
+	font-size: 13px;
+}
+.full-h{
+	height: 100vh;
+}
+.capitalize{
+	text-transform: capitalize;
+	letter-spacing: 2px;
+}
